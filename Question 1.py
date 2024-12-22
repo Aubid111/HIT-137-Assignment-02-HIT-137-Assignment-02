@@ -53,7 +53,7 @@ def decrypt(text, n, m):
 def verify_decryption(original, decrypted):
     return original == decrypted
 
-# GitHub file URL
+# Pull Raw Text file from Github
 github_url = "https://raw.githubusercontent.com/Aubid111/HIT-137-Assignment-02-HIT-137-Assignment-02/main/raw_text.txt"
 
 # Encryption and decryption process
