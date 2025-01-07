@@ -1,7 +1,9 @@
 import pandas as pd
 
+# run command "pip install openpyxl" in the terminal to install the openpyxl library. Without installing this first, the code will not work. 
+
 def calculate_average_temperatures(file_path, output_file):
-    # Define Australian seasonal mappings
+    # Define Australian seasons
     seasons = {
         "Summer": ["December", "January", "February"],
         "Autumn": ["March", "April", "May"],
@@ -9,10 +11,10 @@ def calculate_average_temperatures(file_path, output_file):
         "Spring": ["September", "October", "November"],
     }
 
-    # Initialize a dictionary to store the cumulative sums and counts for each season
+    # Part A) Create a dictionary to store the cumulative sums and counts for each season
     season_data = {season: {"sum": 0, "count": 0} for season in seasons}
 
-    # Read the Excel file from the GitHub repository
+    # Read the Excel file from the GitHub repository. Please note that we have combined all the years into a single spreadsheet. 
     xls = pd.ExcelFile(file_path)
 
     # Loop through each sheet (year)
