@@ -53,7 +53,7 @@ def decrypt(text, n, m):
 def verify_decryption(original, decrypted):
     return original == decrypted
 
-# Pull Raw Text file from Github
+# Pull Raw Text file from Github. Siam please ensure the file path is correct
 github_url = "https://raw.githubusercontent.com/Aubid111/HIT-137-Assignment-02-HIT-137-Assignment-02/main/raw_text.txt"
 
 # Encryption and decryption process
@@ -63,21 +63,21 @@ try:
     response.raise_for_status()  # Raise an error for failed requests
     raw_text = response.text
 
-    # User inputs for encryption parameters
+    # User to put the required parameters for the encrypption
     n = int(input("Enter value for n: "))
     m = int(input("Enter value for m: "))
 
     # Encrypt the text
     encrypted_text = encrypt(raw_text, n, m)
 
-    # Write the encrypted text to a file
+    # Write the encrypted text to a file as required and then save it. 
     with open("encrypted_text.txt", "w") as file:
         file.write(encrypted_text)
 
     # Decrypt the text
     decrypted_text = decrypt(encrypted_text, n, m)
 
-    # Verify correctness
+    # Verify if the decryption matches the original text or not. 
     if verify_decryption(raw_text, decrypted_text):
         print("Decryption verification successful: The decrypted text matches the original text.")
     else:
